@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Is He Working???</title>
-</head>
+	<head>
+		<title>Is He Working???</title>
+	</head>
 
-<body>
-Today, he is...
-<b><p id="today"></p></b>
-<br>Tomorrow, he is...
-<b><p id="tomorrow"></p></b>
+	<body style="background-color:black; color:white">
+		Today, he is...
+		<b><p id="today"></p></b>
+		<br>Tomorrow, he is...
+		<b><p id="tomorrow"></p></b>
 
-<script>
-  var start_date = new Date(2021, 05, 24);
-  var today = new Date();
-  
-  var diffTime = Math.abs(today - start_date);
-  var diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-  var mod = diffDays % 3;
-  
-  if (mod == 0)
-  {
-  	document.getElementById("today").innerHTML = "working =(";
-    document.getElementById("tomorrow").innerHTML = "not working!";
-  }
-  else if (mod == 1)
-  {
-	document.getElementById("today").innerHTML = "not working!";
-    document.getElementById("tomorrow").innerHTML = "also not working!";
-  }
-  else if (mod == 2)
-  {
-  	document.getElementById("today").innerHTML = "not working!";
-    document.getElementById("tomorrow").innerHTML = "working =(";
-  }
-</script>
-</body>
+		<script>
+			var start_date = new Date(2021, 05, 24);
+			var today = new Date();
+
+			var time_difference = Math.abs(today - start_date);
+			var day_difference = Math.floor(time_difference / (1000 * 60 * 60 * 24));
+			var mod = day_difference % 3;
+
+			if (mod == 0)
+			{
+				document.getElementById("today").innerHTML = "working =(";
+				document.getElementById("tomorrow").innerHTML = "not working!";
+			}
+			else if (mod == 1)
+			{
+				document.getElementById("today").innerHTML = "not working!";
+				document.getElementById("tomorrow").innerHTML = "also not working!";
+			}
+			else if (mod == 2)
+			{
+				document.getElementById("today").innerHTML = "not working!";
+				document.getElementById("tomorrow").innerHTML = "working =(";
+			}
+		</script>
+		<hr><br><br><br>
+	</body>
+	<footer>
+		<sup>This information is for educational purposes only. Past performance does not guarantee future results. Viewer discretion is advised.</sup>
+	</footer>
+</html>
