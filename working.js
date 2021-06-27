@@ -3,14 +3,25 @@ function generateTableHead(table)
 	let thead = table.createTHead();
 	let row = thead.insertRow();
 	
-	for (let key of data)
-	{
-		let th = document.createElement("th");
-		let text = document.createTextNode(key);
-		
-		th.appendChild(text);
-		row.appendChild(th);
-	}
+	let th = document.createElement("th");
+	let text = document.createTextNode("Date");
+	
+	th.appendChild(text);
+	row.appendChild(th);
+	
+	text = document.createTextNode("Status");
+	
+	th.appendChild(text);
+	row.appendChild(th);
+	
+//	for (let key of data)
+//	{
+//		let th = document.createElement("th");
+//		let text = document.createTextNode(key);
+//		
+//		th.appendChild(text);
+//		row.appendChild(th);
+//	}
 }
 
 function generateTable(table, data)
@@ -31,26 +42,64 @@ function generateTable(table, data)
 
 function getDateString(date)
 {
-    var d = date.getDate();
-    var m = date.getMonth() + 1;
-    var y = date.getFullYear();
-    return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
+	var dow = date.getDay();
+	var d = date.getDate();
+	var m = date.getMonth() + 1;
+	var y = date.getFullYear();
+	
+	var day = "";
+	
+	switch (dow)
+	{
+		case 0:
+			day = "Sun";
+			break;
+			
+		case 1:
+			day = "Mon";
+			break;
+			
+		case 2:
+			day = "Tue";
+			break;
+			
+		case 3:
+			day = "Wed";
+			break;
+			
+		case 4:
+			day = "Thur";
+			break;
+			
+		case 5:
+			day = "Fri";
+			break;
+			
+		case 6:
+			day = "Sat";
+			break;
+			
+		default:
+			day = "ERR";
+	}
+	
+	return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + day;
 }
 
 function getWorkingString(m)
 {
 	if (m == 0)
-    {
-    	return "Working";
-    }
-    if (m == 1)
-    {
-    	return "Not working";
-    }
-    if (m == 2)
-    {
-    	return "Not working";
-    }
+    	{
+    		return "Working";
+    	}
+    	if (m == 1)
+    	{
+    		return "Not working";
+    	}
+    	if (m == 2)
+    	{
+    		return "Not working";
+    	}
 }
 
 var start_date = new Date(2021, 05, 24);
