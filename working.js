@@ -9,6 +9,7 @@ function generateTableHead(table)
 	th.appendChild(text);
 	row.appendChild(th);
 	
+	th = document.createElement("th");
 	text = document.createTextNode("Status");
 	
 	th.appendChild(text);
