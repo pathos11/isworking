@@ -53,31 +53,31 @@ function getDateString(date)
 	switch (dow)
 	{
 		case 0:
-			day = "Sun";
+			day = "Sun (日)";
 			break;
 			
 		case 1:
-			day = "Mon";
+			day = "Mon (月)";
 			break;
 			
 		case 2:
-			day = "Tue";
+			day = "Tue (火)";
 			break;
 			
 		case 3:
-			day = "Wed";
+			day = "Wed (水)";
 			break;
 			
 		case 4:
-			day = "Thur";
+			day = "Thur (木)";
 			break;
 			
 		case 5:
-			day = "Fri";
+			day = "Fri (金)";
 			break;
 			
 		case 6:
-			day = "Sat";
+			day = "Sat (土)";
 			break;
 			
 		default:
